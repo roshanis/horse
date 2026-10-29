@@ -1,0 +1,595 @@
+<title>Travancore 1671-1758 Atlas</title>
+<meta charset="utf-8">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans+Condensed:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#f4efe2; --paper2:#ebe4d2; --ink:#2b2620; --ink2:#5d5446; --ink3:#8a7f6c; --rule:#d6cbb3;
+  --accent:#8c2f1f; --accent2:#b5532f;
+  --war:#a63a2a; --treaty:#2f6b5a; --court:#7a5a1e; --europe:#2f4f86; --lannoy:#7b3f86;
+  --own:#b03a2c; --subject:#d8844f; --ally:#d6b25a; --rival:#5d7fa3; --madurai:#8d8a80;
+  --land:#eeebdc; --b1:#e6e2cf; --b2:#dcd5bb; --b3:#d0c6a4; --b4:#c2b48c; --b5:#b3a27b; --b6:#a8956f;
+  --sea:#c9d8dc; --water:#b4cbd2; --river:#7fa2ae; --shade:.55; --halo:#f4efe2;
+  --card:#fbf8f0; --chip:#e7dfcb;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1c19; --paper2:#25231f; --ink:#ece4d2; --ink2:#c2b8a3; --ink3:#93897a; --rule:#3d3a33;
+    --accent:#e0856c; --accent2:#e79a6a;
+    --war:#e07a66; --treaty:#6fc1a6; --court:#d9b46a; --europe:#86a8e6; --lannoy:#c59ad0;
+    --own:#d0503f; --subject:#d9945f; --ally:#c9a85a; --rival:#6f93bb; --madurai:#77746c;
+    --land:#2a2a25; --b1:#2f2f29; --b2:#35342d; --b3:#3c3a31; --b4:#444036; --b5:#4c473a; --b6:#554e3f;
+    --sea:#17242a; --water:#22404a; --river:#3f6a78; --shade:.7; --halo:#1d1c19;
+    --card:#24221e; --chip:#34312b;
+  }
+}
+:root[data-theme="dark"]{
+    --paper:#1d1c19; --paper2:#25231f; --ink:#ece4d2; --ink2:#c2b8a3; --ink3:#93897a; --rule:#3d3a33;
+    --accent:#e0856c; --accent2:#e79a6a;
+    --war:#e07a66; --treaty:#6fc1a6; --court:#d9b46a; --europe:#86a8e6; --lannoy:#c59ad0;
+    --own:#d0503f; --subject:#d9945f; --ally:#c9a85a; --rival:#6f93bb; --madurai:#77746c;
+    --land:#2a2a25; --b1:#2f2f29; --b2:#35342d; --b3:#3c3a31; --b4:#444036; --b5:#4c473a; --b6:#554e3f;
+    --sea:#17242a; --water:#22404a; --river:#3f6a78; --shade:.7; --halo:#1d1c19;
+    --card:#24221e; --chip:#34312b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Source Serif 4",Georgia,serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+.sans{font-family:"IBM Plex Sans Condensed",system-ui,sans-serif}
+h1,h2,h3{font-family:"IM Fell English",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+.wrap{max-width:1360px;margin:0 auto;padding:0 24px}
+header.top{padding:40px 0 22px;border-bottom:1px solid var(--rule)}
+header.top .kick{font:500 13px/1.3 "IBM Plex Sans Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+header.top h1{font-size:clamp(34px,5vw,58px);margin:8px 0 10px}
+header.top .lede{max-width:780px;color:var(--ink2);font-size:18px}
+.stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin:18px 0 0;font-family:"IBM Plex Sans Condensed",sans-serif;color:var(--ink2)}
+.stats b{font:400 26px/1 "IM Fell English",serif;color:var(--ink);display:block}
+nav.toc{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
+nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:none}
+nav.toc a{font:500 14px "IBM Plex Sans Condensed",sans-serif;color:var(--ink2);text-decoration:none;padding:5px 10px;border-radius:14px;white-space:nowrap}
+nav.toc a:hover{background:var(--chip);color:var(--ink)}
+.themebtn{margin-left:auto;border:1px solid var(--rule);background:none;color:var(--ink2);border-radius:14px;padding:4px 10px;font:500 13px "IBM Plex Sans Condensed",sans-serif;cursor:pointer;white-space:nowrap}
+section.band{padding:44px 0;border-bottom:1px solid var(--rule)}
+section.band h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:8px}
+section.band .sub{color:var(--ink2);max-width:820px;margin:0 0 22px}
+.c{font:500 12.5px "IBM Plex Sans Condensed",sans-serif;color:var(--ink3);white-space:nowrap}
+/* how it happened */
+.eras{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.erabtn{display:flex;flex-direction:column;justify-content:flex-start;text-align:left;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 14px 12px;cursor:pointer;color:var(--ink);font:inherit}
+.erabtn:hover{border-color:var(--accent2)}
+.erabtn .n{font:500 12px "IBM Plex Sans Condensed",sans-serif;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+.erabtn h3{font-size:22px;margin:4px 0 6px}
+.erabtn p{margin:0;color:var(--ink2);font-size:14.5px}
+/* atlas */
+#atlas{padding-top:0}
+.atlas{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:0 28px;align-items:start}
+.mapcol{position:sticky;top:45px;height:calc(100vh - 45px);display:flex;flex-direction:column;padding:12px 0}
+.mapbox{position:relative;flex:1;min-height:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--sea)}
+.mapbox svg{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+.mapbox svg.drag{cursor:grabbing}
+.yearbig{position:absolute;left:12px;bottom:10px;font:400 44px/1 "IM Fell English",serif;color:var(--ink);text-shadow:0 0 6px var(--halo),0 0 2px var(--halo);pointer-events:none}
+.yearbig small{display:block;font:500 13px "IBM Plex Sans Condensed",sans-serif;color:var(--ink2);margin-top:4px;max-width:260px}
+.zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
+.zoom button,.ctl button{width:34px;height:34px;border-radius:8px;border:1px solid var(--rule);background:var(--card);color:var(--ink);font:600 18px "IBM Plex Sans Condensed",sans-serif;cursor:pointer}
+.legend{font:500 12.5px/1.6 "IBM Plex Sans Condensed",sans-serif;color:var(--ink2);padding:2px 0 6px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin:0 4px -1px 0;vertical-align:baseline}
+.legend span{margin-right:9px;white-space:nowrap}
+.ctl{display:flex;align-items:center;gap:10px;padding:10px 0 4px;flex-wrap:wrap}
+.ctl input[type=range]{width:100%;margin:0;accent-color:var(--accent)}
+.sl{flex:1;min-width:160px;display:flex;flex-direction:column;gap:2px}
+#strip{width:100%;height:22px;display:block;cursor:pointer}
+.ev .lk{position:absolute;right:8px;top:8px;border:0;background:none;color:var(--ink3);font:500 12px "IBM Plex Sans Condensed",sans-serif;cursor:pointer;opacity:0;transition:opacity .2s}
+.ev:hover .lk,.ev.on .lk{opacity:1}
+.gw{display:grid;grid-template-columns:150px minmax(0,1fr);gap:3px 10px;align-items:center;font:500 13px "IBM Plex Sans Condensed",sans-serif;color:var(--ink2)}
+.gw .row{height:22px;position:relative;cursor:pointer}
+.gw .row svg{width:100%;height:100%;display:block}
+.gw .axis{position:relative;height:34px}
+.gw .axis span{position:absolute;transform:translateX(-50%);font-size:12px;color:var(--ink3);top:0}
+.gw .axis i{position:absolute;transform:translateX(-50%);top:16px;font-style:normal;font-size:11.5px;color:var(--accent);white-space:nowrap}
+.gw .nm{text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gcur{position:absolute;top:0;bottom:0;width:2px;background:var(--ink);pointer-events:none}
+.gtip{min-height:44px;margin-top:12px;font-size:15px;color:var(--ink2)}
+.gtip b{color:var(--ink)}
+@media (max-width:900px){.gw{grid-template-columns:96px minmax(0,1fr);font-size:12px}.gw .axis i{display:none}}
+.ctl .yr{font:600 14px "IBM Plex Sans Condensed",sans-serif;color:var(--ink2);min-width:72px}
+.layers{display:flex;flex-wrap:wrap;gap:4px 12px;font:500 13px "IBM Plex Sans Condensed",sans-serif;color:var(--ink2)}
+.layers label{display:flex;align-items:center;gap:4px;cursor:pointer;white-space:nowrap}
+.listcol{padding:12px 0 60px;min-width:0}
+.filters{position:sticky;top:45px;z-index:5;background:var(--paper);padding:8px 0 10px;border-bottom:1px solid var(--rule)}
+.filters input[type=search]{width:100%;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--card);color:var(--ink);font:15px "IBM Plex Sans Condensed",sans-serif}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{border:1px solid var(--rule);background:var(--card);color:var(--ink2);border-radius:14px;padding:3px 10px;font:500 13px "IBM Plex Sans Condensed",sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--chip);color:var(--ink);border-color:var(--ink3)}
+.chip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.count{font:500 13px "IBM Plex Sans Condensed",sans-serif;color:var(--ink3);margin-top:6px}
+.erahead{margin:28px 0 8px;padding:16px 16px 14px;border-left:3px solid var(--accent);background:var(--paper2);border-radius:0 10px 10px 0}
+.erahead .span{font:500 12.5px "IBM Plex Sans Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.erahead h2{font-size:28px;margin:2px 0 8px}
+.erahead p{margin:0 0 8px;color:var(--ink2);font-size:15.5px}
+.erahead .why{font-style:italic;color:var(--ink);margin:0}
+.yearrow{font:400 22px "IM Fell English",serif;color:var(--ink3);margin:18px 0 4px;padding-bottom:2px;border-bottom:1px dotted var(--rule)}
+.ev{position:relative;padding:10px 12px 10px 14px;margin:6px 0;border-radius:8px;background:var(--card);border:1px solid transparent;border-left:3px solid var(--k);scroll-margin-top:150px}
+.ev.on{border-color:var(--rule);border-left-color:var(--k);box-shadow:0 1px 8px rgba(0,0,0,.08)}
+.ev .d{font:600 13px "IBM Plex Sans Condensed",sans-serif;color:var(--k)}
+.ev .d .kt{font-weight:500;color:var(--ink3);margin-left:6px}
+.ev h4{margin:2px 0 4px;font:600 16.5px/1.3 "Source Serif 4",serif}
+.ev p{margin:0;font-size:15px;color:var(--ink2)}
+.ev blockquote{margin:8px 0 2px;padding:2px 0 2px 10px;border-left:2px solid var(--rule);font-style:italic;color:var(--ink);font-size:15px}
+.ev .meta{margin-top:6px;font:500 12.5px/1.6 "IBM Plex Sans Condensed",sans-serif;color:var(--ink3)}
+.ev .meta button{border:0;background:var(--chip);color:var(--ink2);border-radius:10px;padding:0 7px;margin:0 3px 3px 0;font:inherit;cursor:pointer}
+.ev .meta button:hover{color:var(--ink)}
+.ev .src{display:block;margin-top:2px}
+.ev .flag{margin-top:6px;font:500 13px "IBM Plex Sans Condensed",sans-serif;color:var(--accent);}
+.ev .flag::before{content:"Book differs: ";font-weight:600}
+.placebar{display:none;margin-top:8px;font:500 13px "IBM Plex Sans Condensed",sans-serif;color:var(--ink2);background:var(--chip);padding:6px 10px;border-radius:8px}
+.placebar.show{display:block}
+.placebar b{color:var(--ink)}
+.placebar button{float:right;border:0;background:none;color:var(--accent);font:inherit;cursor:pointer}
+/* svg map styles */
+.m-land{fill:var(--land)} .m-b1{fill:var(--b1)} .m-b2{fill:var(--b2)} .m-b3{fill:var(--b3)} .m-b4{fill:var(--b4)} .m-b5{fill:var(--b5)} .m-b6{fill:var(--b6)}
+.m-sea{fill:var(--sea)} .m-water{fill:var(--water)} .m-river{fill:none;stroke:var(--river);stroke-linejoin:round;stroke-linecap:round}
+.m-shade{opacity:var(--shade);mix-blend-mode:multiply}
+:root[data-theme="dark"] .m-shade{mix-blend-mode:normal}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .m-shade{mix-blend-mode:normal}}
+.reg{stroke:var(--ink);stroke-opacity:.35;fill-rule:evenodd;transition:fill .4s,fill-opacity .4s;cursor:pointer}
+.reg.own{fill:var(--own);fill-opacity:.36}.reg.subject{fill:var(--subject);fill-opacity:.32}.reg.ally{fill:var(--ally);fill-opacity:.3}.reg.rival{fill:var(--rival);fill-opacity:.24}.reg.madurai{fill:var(--madurai);fill-opacity:.12}
+.reg:hover{fill-opacity:.5}
+.rlab{font-family:"IM Fell English SC",serif;fill:var(--ink);fill-opacity:.62;text-anchor:middle;pointer-events:none;letter-spacing:.06em}
+.plab{font-family:"IBM Plex Sans Condensed",sans-serif;font-weight:500;fill:var(--ink);paint-order:stroke;stroke:var(--halo);stroke-linejoin:round;pointer-events:none}
+.plab.minor{fill:var(--ink2);font-weight:400}
+.plab.hot{fill:var(--accent);font-weight:600}
+.pdot{fill:var(--ink);stroke:var(--halo);cursor:pointer}
+.pdot.unc{fill:var(--halo);stroke:var(--ink)}
+.evdot{pointer-events:none}
+.post{stroke:var(--halo);cursor:pointer}
+.post.dutch{fill:#e08a1e}.post.english{fill:#c4302b}.post.french{fill:#3b5fc4}
+.line{fill:none;stroke:var(--ink);stroke-linecap:round}
+.route{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.route.dutch{stroke:#e08a1e}.route.tvm{stroke:var(--own)}.route.rival{stroke:var(--rival)}
+.tip{position:absolute;pointer-events:none;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:8px;padding:6px 9px;font:500 13px/1.35 "IBM Plex Sans Condensed",sans-serif;max-width:260px;box-shadow:0 2px 10px rgba(0,0,0,.15);display:none;z-index:4}
+.tip b{display:block;font-size:14px}
+/* colachel */
+.col2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.insetbox{border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--sea);aspect-ratio:4/3}
+.insetbox svg{width:100%;height:100%;display:block}
+.nums{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:14px 0}
+.nums div{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:8px 10px;font:500 13px/1.3 "IBM Plex Sans Condensed",sans-serif;color:var(--ink2)}
+.nums b{display:block;font:400 26px/1.1 "IM Fell English",serif;color:var(--ink)}
+.siege{list-style:none;padding:0;margin:0;border-left:2px solid var(--rule)}
+.siege li{position:relative;padding:4px 0 10px 16px}
+.siege li::before{content:"";position:absolute;left:-6px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--k)}
+.siege .d{font:600 13px "IBM Plex Sans Condensed",sans-serif;color:var(--k)}
+.siege b{font-weight:600}
+.siege p{margin:2px 0 0;color:var(--ink2);font-size:14.5px}
+/* people */
+.groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.group h3{font-size:22px;margin-bottom:6px}
+.person{padding:8px 0;border-bottom:1px dotted var(--rule)}
+.person b{font-weight:600}
+.person p{margin:2px 0 0;font-size:14.5px;color:var(--ink2)}
+.person button{border:0;background:none;padding:0;color:var(--accent);font:500 12.5px "IBM Plex Sans Condensed",sans-serif;cursor:pointer}
+.gene{display:grid;gap:8px;margin-top:6px}
+.gen{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}
+.gen .lbl{flex:0 0 100%;font:500 12.5px "IBM Plex Sans Condensed",sans-serif;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+.gbox{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:6px 10px;font-size:14px;max-width:310px}
+.gbox b{font-weight:600}
+.gbox.king{border-color:var(--own)}
+.gbox small{display:block;font:500 12px "IBM Plex Sans Condensed",sans-serif;color:var(--ink3)}
+.houses{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-bottom:22px}
+.house{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
+.house h3{font-size:21px;margin-bottom:4px}
+.house p{margin:0;font-size:14.5px;color:var(--ink2)}
+/* concepts */
+.terms{columns:3 300px;column-gap:28px}
+.term{break-inside:avoid;padding:0 0 12px}
+.term b{font-family:"IM Fell English",serif;font-size:19px;font-weight:400}
+.term p{margin:0;font-size:14.5px;color:var(--ink2)}
+/* compare */
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--rule)}
+th{font:600 13px "IBM Plex Sans Condensed",sans-serif;color:var(--ink3);background:var(--paper2);text-transform:uppercase;letter-spacing:.05em}
+td:first-child{font-weight:600;width:16%}
+.tag{font:600 11.5px "IBM Plex Sans Condensed",sans-serif;padding:2px 7px;border-radius:10px;white-space:nowrap}
+.tag.diff{background:color-mix(in srgb,var(--war) 18%,transparent);color:var(--war)}
+.tag.add{background:color-mix(in srgb,var(--treaty) 18%,transparent);color:var(--treaty)}
+.tag.same{background:var(--chip);color:var(--ink2)}
+.slips{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.slip{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
+.slip b{display:block;font-family:"IM Fell English",serif;font-weight:400;font-size:20px}
+.slip p{margin:4px 0 0;font-size:14.5px;color:var(--ink2)}
+.places{columns:3 280px;column-gap:24px;font-size:14px}
+.places div{break-inside:avoid;padding:3px 0;border-bottom:1px dotted var(--rule)}
+.places .u{color:var(--accent);font:600 12px "IBM Plex Sans Condensed",sans-serif}
+footer{padding:30px 0 60px;color:var(--ink3);font-size:14px}
+@media (max-width:900px){
+  .wrap{padding:0 16px}
+  .atlas{display:block}
+  .mapcol{top:41px;height:52vh;z-index:6;background:var(--paper);padding:6px 0 4px;border-bottom:1px solid var(--rule)}
+  .yearbig{font-size:30px}
+  .yearbig small{font-size:12px;max-width:180px}
+  .legend{font-size:11.5px;line-height:1.45;padding:0 0 2px}
+  .legend span{margin-right:6px}
+  .legend .eu{display:none}
+  .filters{position:static}
+  .ctl{padding:6px 0 0;gap:8px}
+  .ctl button{width:30px;height:30px}
+  .layers{font-size:12px;gap:2px 9px}
+  .col2{grid-template-columns:1fr}
+  header.top{padding:26px 0 18px}
+  header.top .lede{font-size:16.5px}
+  .ev{scroll-margin-top:calc(41px + 52vh + 16px)}
+  .filters .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .chip{white-space:nowrap}
+}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kick">Reading atlas for Horse of the Servant</div>
+  <h1>Travancore, 1671 to 1758</h1>
+  <p class="lede">Every dated event in Mark de Lannoy's <i>The Kulasekhara Perumals of Travancore</i> (Leiden, 1997), placed on the real terrain of the coast, with the printed page, his quotations from the archives, the record he cites, and every point where the book disagrees with itself or with the novel's Historical Note. Scroll the timeline and the map follows; drag the slider and watch the principalities fall to Travancore one by one.</p>
+  <div class="stats" id="stats"></div>
+</div></header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#how">How it happened</a><a href="#atlas">Atlas and timeline</a><a href="#growth">How the kingdom grew</a><a href="#colachel">Colachel</a><a href="#houses">Houses and people</a><a href="#terms">Key terms</a><a href="#compare">Against the Note</a><a href="#slips">Slips and places</a>
+  <button class="themebtn" id="themebtn" type="button">Theme</button>
+</div></nav>
+
+<section class="band" id="how"><div class="wrap">
+  <h2>How it happened</h2>
+  <p class="sub">The book in nine stages. Each opens its stretch of the timeline below and sets the map to that moment.</p>
+  <div class="eras" id="eras"></div>
+</div></section>
+
+<section class="band" id="atlas"><div class="wrap">
+  <div class="atlas">
+    <div class="mapcol">
+      <div class="mapbox" id="mapbox">
+        <svg id="map" viewBox="450 300 1880 2200" preserveAspectRatio="xMidYMid meet" aria-label="Map of Travancore and its neighbours">
+          <defs>
+            <g id="basemap">
+              <rect class="m-land" x="0" y="0" width="2560" height="2560"/>
+              <path class="m-b1" fill-rule="evenodd" d="{{C100}}"/>
+              <path class="m-b2" fill-rule="evenodd" d="{{C300}}"/>
+              <path class="m-b3" fill-rule="evenodd" d="{{C600}}"/>
+              <path class="m-b4" fill-rule="evenodd" d="{{C1000}}"/>
+              <path class="m-b5" fill-rule="evenodd" d="{{C1500}}"/>
+              <path class="m-b6" fill-rule="evenodd" d="{{C2000}}"/>
+            </g>
+            <g id="hydro">
+              <image class="m-shade" href="{{SHADE}}" x="0" y="0" width="2560" height="2560"/>
+              <path class="m-water" fill-rule="evenodd" d="{{WATER}}"/>
+              <path class="m-river" d="{{RIVERS}}" stroke-width="1.6"/>
+              <path class="m-sea" fill-rule="evenodd" d="{{SEA}}"/>
+            </g>
+          </defs>
+          <use href="#basemap"/>
+          <g id="gReg"></g>
+          <use href="#hydro"/>
+          <g id="gRegLab"></g>
+          <g id="gLines"></g>
+          <g id="gRoutes"></g>
+          <g id="gPosts"></g>
+          <g id="gEv"></g>
+          <g id="gPlaces"></g>
+        </svg>
+        <div class="yearbig" id="yearbig"></div>
+        <div class="zoom"><button type="button" id="zin" aria-label="Zoom in">+</button><button type="button" id="zout" aria-label="Zoom out">&minus;</button><button type="button" id="zreset" aria-label="Reset view" style="font-size:13px">&#8634;</button></div>
+        <div class="tip" id="tip"></div>
+      </div>
+      <div class="legend" id="legend"></div>
+      <div class="ctl">
+        <button type="button" id="play" aria-label="Play">&#9654;</button>
+        <div class="sl"><svg id="strip" viewBox="1671 0 88 30" preserveAspectRatio="none" aria-label="Events per year"></svg><input type="range" id="slider" min="1671" max="1759" step="0.0833" value="1671" aria-label="Year"></div>
+        <span class="yr" id="slideryr"></span>
+      </div>
+      <div class="layers" id="layers"></div>
+    </div>
+    <div class="listcol">
+      <div class="filters">
+        <input type="search" id="q" placeholder="Search events, people, places, archive sources" aria-label="Search">
+        <div class="chips" id="chips"></div>
+        <div class="placebar" id="placebar"></div>
+        <div class="count" id="count"></div>
+      </div>
+      <div id="list"></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="growth"><div class="wrap">
+  <h2>How the kingdom grew</h2>
+  <p class="sub">Who held each principality, year by year, from 1700 to 1760, using the same colours as the map. Hover a bar for the change and its date; click to open the atlas at that moment.</p>
+  <div class="gw" id="gw"></div>
+  <div class="gtip" id="gtip">Read across a row to follow one state; read down a column to see the whole coast in one year.</div>
+</div></section>
+
+<section class="band" id="colachel"><div class="wrap">
+  <h2>Colachel, February to August 1741</h2>
+  <p class="sub">The siege from the Dutch landing to the prisoners' march, drawn on the real coast of the far south. Hackert's detour to Tuticorin lies off the map to the east. Hernitte, where the king pulled back his army in late July, and the Cobolon gate on the lines could not be located and are left off.</p>
+  <div class="col2">
+    <div>
+      <div class="insetbox"><svg id="inset" viewBox="1400 2080 360 270" preserveAspectRatio="xMidYMid meet" aria-label="Map of the Colachel siege area"><use href="#basemap"/><use href="#hydro"/><g id="iLines"></g><g id="iRoutes"></g><g id="iPlaces"></g></svg></div>
+      <div class="nums" id="nums"></div>
+    </div>
+    <ol class="siege" id="siege"></ol>
+  </div>
+</div></section>
+
+<section class="band" id="houses"><div class="wrap">
+  <h2>Houses and people</h2>
+  <p class="sub">Why the kingdom kept falling apart, who was who, and how the Venad line was kept alive by adoption. Each person links to the events that name them.</p>
+  <div class="houses">
+    <div class="house"><h3>Trippappur house</h3><p>Rulers of Venad, with the women's palace at Attingal. Kept dying out and adopting from Kolathiri in the north (1681, 1696, 1718). Martanda Varma's line. <span class="c">pp. 2-4, 186; table 3</span></p></div>
+    <div class="house"><h3>Jayasimhanad house</h3><p>Princes of Quilon, the Dutch 'Desinganadu', with the women's palace at Kallada. From 1722 ruled by princes adopted from Kayamkulam, so in practice one block with the Cheraway house. <span class="c">pp. 36-37; table 5</span></p></div>
+    <div class="house"><h3>Cheraway house</h3><p>Odanad, that is Kayamkulam, and Karunagappalli. Claimed seniority over all three branches and fought Travancore for Karunagappalli and Nedumangadu for forty years. <span class="c">pp. 2, 16-25; tables 6-8</span></p></div>
+    <div class="house"><h3>Perakat branch of Nedumangadu</h3><p>The hill principality around Kottarakkara, the 'pepper-storeroom of Malabar'. Its princes kept claiming Venad by adoption; annexed in 1736. <span class="c">pp. 11-12, 65; table 4</span></p></div>
+    <div class="house"><h3>Pillamar and madumbimar</h3><p>Temple administrators in Venad and hereditary officials in the smaller states. They collected the taxes with their nayar militias, so every claimant needed them, and they changed sides whenever one grew strong. <span class="c">pp. 5-11, 185-187</span></p></div>
+    <div class="house"><h3>The northern states</h3><p>Purakkad, Tekkumkur and Vadakkumkur, nominally under the Cochin king, the head of the chovvaram Brahmin faction. Divided by their own successions and taken one by one after 1745. <span class="c">pp. 119-147, 190</span></p></div>
+  </div>
+  <h3 style="font-size:26px;margin:8px 0 4px">The Venad line by adoption</h3>
+  <p class="sub" style="margin-bottom:8px">Simplified from the book's genealogical table 3 (p. 230). Marumakkathayam: the heir is the sister's son, so every adoption brings in women as well as men.</p>
+  <div class="gene" id="gene"></div>
+  <h3 style="font-size:26px;margin:26px 0 8px">Who's who</h3>
+  <div class="groups" id="groups"></div>
+</div></section>
+
+<section class="band" id="terms"><div class="wrap">
+  <h2>Key terms</h2>
+  <p class="sub">Words the book leans on, from its glossary (pp. 193-205) and text.</p>
+  <div class="terms" id="termlist"></div>
+</div></section>
+
+<section class="band" id="compare"><div class="wrap">
+  <h2>The book against the novel's Historical Note</h2>
+  <p class="sub">The 2e Historical Note read line by line against the study. Most of its dates already come from de Lannoy and match. These rows are where the book says something different, more precise, or useful that the Note does not use. Nothing in the manuscript was changed.</p>
+  <div class="tbl"><table><thead><tr><th>Topic</th><th>The Historical Note</th><th>De Lannoy</th><th>Page</th><th></th></tr></thead><tbody id="cmp"></tbody></table></div>
+  <p class="c" style="margin-top:10px;white-space:normal">Already in agreement: De Lannoy born at Arras in December 1715; deserted at Kanniyakumari on 2 August 1741; magazine explosion on 9 August; terms on 12 August and the march-out on 13 August; palace guard at the end of 1742; Udayagiri from 1744; chapel after his son's death at Kalakad in 1765; died at Udayagiri on 1 June 1777. Ramayyan dalawa 1737 to 1756. Tambis killed at Kalkulam in 1730. Kottarakkara taken in April 1742. First Mavelikara peace on 22 May 1743, never ratified. Thrippadidanam in January 1750. Second Mavelikara treaty on 15 August 1753.</p>
+</div></section>
+
+<section class="band" id="slips"><div class="wrap">
+  <h2>Slips in the book, and the places</h2>
+  <p class="sub">Where the book contradicts itself, and how each place on the map was identified. Places marked uncertain are drawn as open circles.</p>
+  <div class="slips" id="sliplist"></div>
+  <h3 style="font-size:26px;margin:28px 0 8px">Gazetteer</h3>
+  <div class="places" id="gaz"></div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>Read from an OCR copy of the EPUB, so a few figures may carry scanning errors. Page numbers are the printed pages. Quotations are short and attributed; summaries and era narratives are mine. Terrain from open elevation data and water from OpenStreetMap via Overture Maps, with modern dams, canals and straight drainage cuts removed where they could be detected. Principality borders are approximate reconstructions drawn from the book's maps and the watershed of the Ghats, not surveyed lines.</p>
+</div></footer>
+
+<script>
+const EV = {{EVENTS}};
+const PL = {{PLACES}};
+const RG = {{REGIONS}};
+const RS = {{REGSTATUS}};
+const ERAS = {{ERAS}};
+const POSTS = {{POSTS}};
+const LINES = {{LINES}};
+const ROUTES = {{ROUTES}};
+const PEOPLE = {{PEOPLE}};
+const TERMS = {{TERMS}};
+const CMP = {{CMP}};
+const SLIPS = {{SLIPS}};
+(function(){
+"use strict";
+const $ = s => document.querySelector(s);
+const NS = "http://www.w3.org/2000/svg";
+const KIND = {war:"War",treaty:"Treaty",court:"Court and state",europe:"Europeans",lannoy:"De Lannoy and the deserters"};
+const STAT = {own:"Travancore",subject:"Subject or tributary",ally:"Kin or ally",rival:"Rival or enemy",madurai:"Madurai side"};
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function chap(p){const n=parseInt(String(p),10); if(isNaN(n))return ""; return n<=44?"I":n<=74?"II":n<=118?"III":n<=148?"IV":n<=184?"V":"Concl.";}
+function proj(lat,lon){const x=((lon+180)/360*1024-726)*256; const r=lat*Math.PI/180; const y=((1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*1024-480)*256; return [x,y];}
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e;}
+function fmtDate(e){ if(e.y>=1800||!e.m) return (e.approx?"c. ":"")+e.y; return (e.approx?"c. ":"")+(e.d?e.d+" ":"")+MON[e.m-1]+" "+e.y; }
+// ---------- prepare events
+EV.forEach((e,i)=>{ e.i=i; e.t=e.y+(e.m?(e.m-1)/12:0)+(e.d?(e.d-1)/372:0); });
+EV.sort((a,b)=>a.t-b.t||a.i-b.i);
+EV.forEach((e,i)=>{ e.i=i; e.era=ERAS.find(r=>e.t>=r.from&&e.t<r.to)||ERAS[0]; });
+// stats
+const nq=EV.filter(e=>e.q).length, ns=EV.filter(e=>e.src).length, nd=EV.filter(e=>e.note).length;
+$("#stats").innerHTML=[[EV.length,"dated events"],[Object.keys(PL).length,"places"],[nq,"quotations"],[ns,"archive records named"],[nd,"internal contradictions flagged"],[CMP.length,"checks against the Note"]].map(([a,b])=>`<div><b>${a}</b>${b}</div>`).join("");
+// ---------- eras
+$("#eras").innerHTML=ERAS.map((r,i)=>`<button class="erabtn" type="button" data-era="${r.id}"><div class="n">${i+1}. ${esc(r.span)} <span style="color:var(--ink3)">${esc(r.ch)}</span></div><h3>${esc(r.name)}</h3><p>${esc(r.why)}</p></button>`).join("");
+document.querySelectorAll(".erabtn").forEach(b=>b.addEventListener("click",()=>{ const h=document.getElementById("era-"+b.dataset.era); if(h){ h.scrollIntoView({behavior:"smooth"}); } }));
+// ---------- map setup
+const svg=$("#map"), gReg=$("#gReg"), gRegLab=$("#gRegLab"), gLines=$("#gLines"), gRoutes=$("#gRoutes"), gPosts=$("#gPosts"), gEv=$("#gEv"), gPlaces=$("#gPlaces"), tip=$("#tip");
+function fitVB(){ const mob=window.innerWidth<=900; const a=proj(mob?10.12:10.62, mob?76.05:75.85), b=proj(mob?7.98:7.93, mob?77.8:78.25); return [a[0],a[1],b[0]-a[0],b[1]-a[1]]; }
+let VB0=fitVB(); let vb=VB0.slice();
+function setVB(){ svg.setAttribute("viewBox",vb.join(" ")); scaleText(); }
+function pxPerUnit(){ const r=svg.getBoundingClientRect(); return Math.min(r.width/vb[2], r.height/vb[3]) || 0.3; }
+const regEls={};
+for(const k in RG){ const r=RG[k]; if(!r.d) continue; const p=el("path",{d:r.d,class:"reg rival","data-r":k},gReg); regEls[k]=p;
+  p.addEventListener("mousemove",ev=>{ const s=statusAt(k,T); showTip(ev,`<b>${esc(RS[k].name)}</b>${esc(STAT[s[1]])}<br>${esc(s[2])}`); });
+  p.addEventListener("mouseleave",hideTip);
+  if(r.c){ const t=el("text",{x:r.c[0],y:r.c[1],class:"rlab"},gRegLab); t.textContent=RS[k].name.replace(/ \(.*\)/,""); if(["purakkad","karunagappalli","kayamkulam","karappuram","attingal","nanjanad","desinganadu"].includes(k)) t.dataset.small=1; }
+}
+function statusAt(k,t){ const seq=RS[k].seq; let s=seq[0]; for(const x of seq){ if(x[0]<=t) s=x; } return s; }
+// lines, routes, posts
+function pathOf(pts){ return "M"+pts.map(p=>proj(p[0],p[1]).map(v=>v.toFixed(1)).join(",")).join(" L"); }
+const lineEls=LINES.map(L=>{ const g=el("g",{},gLines); const p=el("path",{d:pathOf(L.pts),class:"line"},g); const p2=el("path",{d:pathOf(L.pts),class:"line",stroke:"transparent"},g); p2.style.strokeWidth="14px"; p2.addEventListener("mousemove",ev=>showTip(ev,`<b>${esc(L.name)}</b>${esc(L.note)}`)); p2.addEventListener("mouseleave",hideTip); return {L,g,p}; });
+const routeEls=ROUTES.map(R=>{ const g=el("g",{},gRoutes); const p=el("path",{d:pathOf(R.pts),class:"route "+R.side,"marker-end":"url(#arr-"+R.side+")"},g); const h=el("path",{d:pathOf(R.pts),fill:"none",stroke:"transparent"},g); h.style.strokeWidth="16px"; h.addEventListener("mousemove",ev=>showTip(ev,`<b>${esc(R.name)}</b>${esc(R.note)}`)); h.addEventListener("mouseleave",hideTip); return {R,g,p}; });
+const defs=svg.querySelector("defs");
+[["dutch","#e08a1e"],["tvm","var(--own)"],["rival","var(--rival)"]].forEach(([k,c])=>{ const m=el("marker",{id:"arr-"+k,viewBox:"0 0 10 10",refX:"6",refY:"5",markerWidth:"5",markerHeight:"5",orient:"auto-start-reverse"},defs); el("path",{d:"M0,0 L10,5 L0,10 z",fill:c},m); });
+const postEls=POSTS.map(P=>{ const [x,y]=proj(P[1],P[2]); const s=el("rect",{class:"post "+P[3],x:x,y:y,width:1,height:1},gPosts); s.addEventListener("mousemove",ev=>showTip(ev,`<b>${esc(P[0])}</b>${esc({dutch:"Dutch",english:"English",french:"French"}[P[3]])} post. ${esc(P[6])}`)); s.addEventListener("mouseleave",hideTip); return {P,s,x,y}; });
+// places
+const evByPlace={}; EV.forEach(e=>e.pl.forEach(p=>{(evByPlace[p]=evByPlace[p]||[]).push(e);}));
+const placeEls={};
+const TIER1=new Set(["Trivandrum","Quilon","Cochin","Colachel","Kanniyakumari","Kottayam","Attingal","Kayamkulam","Madurai","Mavelikara"]);
+const MAJOR=new Set([...TIER1,"Kalkulam","Anjengo","Karunagappalli","Vaikom","Purakkad","Kottarakkara","Tinnevelly","Tuticorin","Thrippunithura","Varkalai","Aramboli","Paravur (Seeburg)","Changanacherri","Tiruvalla"]);
+const WEST=new Set(["Cochin","Cranganur","Purakkad","Alleppey","Ambalapuzha","Quilon","Paravur (Seeburg)","Varkalai","Anjengo","Edavai","Vizhinjam","Colachel","Tengapattanam","Cariapattanam","Karunagappalli","Kayamkulam","Shertallai","Tottapolli","Toravur","Udayagiri","Chirayinkizh","Trivandrum","Karur","Kallikkattu Tura","Panderatourte"]);
+const REGIONLIKE=new Set(["Nedumangadu","Tekkumkur","Vadakkumkur","Nanjanad","Karappuram"]);
+for(const k in PL){ const p=PL[k]; if(!p.xy||REGIONLIKE.has(k)) continue; const g=el("g",{},gPlaces);
+  const c=el("circle",{cx:p.xy[0],cy:p.xy[1],r:3,class:"pdot"+(p.c>=3?" unc":"")},g);
+  const t=el("text",{x:p.xy[0],y:p.xy[1],class:"plab"+(MAJOR.has(k)?"":" minor")},g); t.textContent=k.replace(" (Seeburg)","").replace(" (Hollandia)","").replace(" (near Varkalai)","");
+  if(WEST.has(k)) t.setAttribute("text-anchor","end");
+  placeEls[k]={g,c,t,major:MAJOR.has(k),t1:TIER1.has(k),west:WEST.has(k),p};
+  c.addEventListener("mousemove",ev=>{ const n=(evByPlace[k]||[]).length; showTip(ev,`<b>${esc(k)}</b>${esc(p.mod)}${p.c>=3?" (uncertain)":""}<br>${n} event${n==1?"":"s"}. Click to filter.`); });
+  c.addEventListener("mouseleave",hideTip);
+  c.addEventListener("click",()=>setPlace(k));
+}
+function showTip(ev,html){ const r=$("#mapbox").getBoundingClientRect(); tip.innerHTML=html; tip.style.display="block"; let x=ev.clientX-r.left+12, y=ev.clientY-r.top+12; if(x+260>r.width) x=Math.max(4,ev.clientX-r.left-270); if(y+120>r.height) y=ev.clientY-r.top-110; tip.style.left=x+"px"; tip.style.top=y+"px"; }
+function hideTip(){ tip.style.display="none"; }
+// layers
+const LAY={reg:true,posts:true,lines:true,routes:true,names:false};
+$("#layers").innerHTML=[["reg","Who holds what"],["routes","Campaign routes"],["lines","Lines and walls"],["posts","European posts"],["names","All place names"]].map(([k,l])=>`<label><input type="checkbox" data-l="${k}" ${LAY[k]?"checked":""}> ${l}</label>`).join("");
+document.querySelectorAll("#layers input").forEach(i=>i.addEventListener("change",()=>{ LAY[i.dataset.l]=i.checked; draw(); }));
+$("#legend").innerHTML=Object.entries(STAT).map(([k,v])=>`<span><i style="background:var(--${k});opacity:.75"></i>${v}</span>`).join("")+`<span class="eu"><i style="background:#e08a1e;border-radius:0"></i>Dutch post</span><span class="eu"><i style="background:#c4302b"></i>English</span><span class="eu"><i style="background:#3b5fc4"></i>French</span><span class="eu"><i style="border:1.5px solid var(--ink);background:none;border-radius:50%"></i>uncertain place</span>`;
+// ---------- state
+let T=1671, SEL=null, PLACE=null;
+function scaleText(){ const k=1/pxPerUnit();
+  for(const n in placeEls){ const o=placeEls[n]; const fs=(o.major?12.5:11)*k; o.t.setAttribute("font-size",fs.toFixed(1)); o.t.setAttribute("stroke-width",(3*k).toFixed(1)); o.t.setAttribute("dx",((o.west?-5:5)*k).toFixed(1)); o.t.setAttribute("dy",(4*k).toFixed(1)); o.c.setAttribute("r",(3.2*k).toFixed(1)); o.c.setAttribute("stroke-width",(1.2*k).toFixed(1)); }
+  gRegLab.querySelectorAll("text").forEach(t=>t.setAttribute("font-size",(14*k).toFixed(1)));
+  postEls.forEach(o=>{ const s=7*k; o.s.setAttribute("x",o.x-s/2); o.s.setAttribute("y",o.y-s/2); o.s.setAttribute("width",s); o.s.setAttribute("height",s); o.s.setAttribute("stroke-width",1.2*k); });
+  lineEls.forEach(o=>{ o.p.style.strokeWidth=(3*k)+"px"; o.p.style.strokeDasharray=`${2*k} ${3*k}`; });
+  routeEls.forEach(o=>{ o.p.style.strokeWidth=(2.6*k)+"px"; o.p.style.strokeDasharray=`${7*k} ${4*k}`; });
+  gReg.querySelectorAll("path").forEach(p=>p.style.strokeWidth=(0.8*k)+"px");
+  svg.querySelector(".m-river").style.strokeWidth=Math.max(0.6,Math.min(1.6,1.1*k))+"px";
+  drawEv(); labelVis();
+}
+function labelVis(){ const ppu=pxPerUnit(); const hot=new Set(SEL?SEL.pl:[]); if(PLACE) hot.add(PLACE);
+  for(const n in placeEls){ const o=placeEls[n]; const show=LAY.names||hot.has(n)||o.t1||(o.major&&ppu>0.28)||ppu>0.62; o.t.style.display=show?"":"none"; o.t.classList.toggle("hot",hot.has(n)); }
+  gRegLab.querySelectorAll("text").forEach(t=>{ t.style.display=(t.dataset.small&&ppu<0.45)?"none":""; });
+}
+function draw(){
+  gReg.style.display=LAY.reg?"":"none"; gRegLab.style.display=LAY.reg?"":"none";
+  for(const k in regEls){ const s=statusAt(k,T)[1]; regEls[k].setAttribute("class","reg "+s); }
+  postEls.forEach(o=>{ o.s.style.display=(LAY.posts&&T>=o.P[4]&&T<o.P[5])?"":"none"; });
+  lineEls.forEach(o=>{ o.g.style.display=(LAY.lines&&T>=o.L.from&&(!o.L.to||T<o.L.to+0.5))?"":"none"; });
+  routeEls.forEach(o=>{ o.g.style.display=(LAY.routes&&T>=o.R.from-0.05&&T<=o.R.to+0.4)?"":"none"; });
+  const era=ERAS.find(r=>T>=r.from&&T<r.to)||ERAS[0];
+  const yr=Math.floor(T+1e-6), mo=Math.min(11,Math.round((T-yr)*12));
+  $("#yearbig").innerHTML=`${yr}<small>${esc(era.name)}${SEL?" · "+esc(fmtDate(SEL)):""}</small>`;
+  $("#slideryr").textContent=MON[mo]+" "+yr;
+  drawEv(); labelVis();
+  if(stripCur){ stripCur.setAttribute("x",(T-0.25).toFixed(2)); }
+  const gx=Math.max(0,Math.min(1,(T-G0)/(G1-G0))); document.querySelectorAll(".gcur").forEach(c=>{ c.style.left=(gx*100)+"%"; c.style.display=(T>=G0&&T<=G1)?"":"none"; });
+}
+function drawEv(){ gEv.innerHTML=""; const k=1/pxPerUnit();
+  const recent=EV.filter(e=>e.t<=T+1e-6&&e.t>T-1.0&&visible(e));
+  const seen={};
+  recent.forEach(e=>{ const age=T-e.t; e.pl.forEach(p=>{ const P=PL[p]; if(!P||!P.xy) return; const key=p; if(seen[key]&&seen[key]>=e.t) return; seen[key]=e.t;
+    el("circle",{cx:P.xy[0],cy:P.xy[1],r:(9+5*(1-age))*k,fill:`var(--${e.k})`,"fill-opacity":(0.18+0.5*(1-age)).toFixed(2),class:"evdot"},gEv); }); });
+  if(SEL){ SEL.pl.forEach(p=>{ const P=PL[p]; if(!P||!P.xy) return; el("circle",{cx:P.xy[0],cy:P.xy[1],r:15*k,fill:"none",stroke:`var(--${SEL.k})`,"stroke-width":3*k,class:"evdot"},gEv); }); }
+}
+// ---------- list
+const list=$("#list");
+const KF={war:true,treaty:true,court:true,europe:true,lannoy:true}; let Q="", QUOTES=false;
+$("#chips").innerHTML=Object.entries(KIND).map(([k,v])=>`<button class="chip" type="button" data-k="${k}" aria-pressed="true"><i style="background:var(--${k})"></i>${v}</button>`).join("")+`<button class="chip" type="button" id="qonly" aria-pressed="false">With quotations</button><button class="chip" type="button" id="flagonly" aria-pressed="false">Book differs</button>`;
+let FLAGS=false;
+document.querySelectorAll(".chip[data-k]").forEach(b=>b.addEventListener("click",()=>{ KF[b.dataset.k]=!KF[b.dataset.k]; b.setAttribute("aria-pressed",KF[b.dataset.k]); applyFilter(); }));
+$("#qonly").addEventListener("click",e=>{ QUOTES=!QUOTES; e.currentTarget.setAttribute("aria-pressed",QUOTES); applyFilter(); });
+$("#flagonly").addEventListener("click",e=>{ FLAGS=!FLAGS; e.currentTarget.setAttribute("aria-pressed",FLAGS); applyFilter(); });
+$("#q").addEventListener("input",e=>{ Q=e.target.value.trim().toLowerCase(); applyFilter(); });
+function visible(e){ if(!KF[e.k]) return false; if(QUOTES&&!e.q) return false; if(FLAGS&&!e.note) return false; if(PLACE&&!e.pl.includes(PLACE)) return false; if(Q){ const s=(e.t0||(e.t0=[e.t_,e.x,e.q,e.src,e.note,e.pl.join(" "),e.pp.join(" "),e.y].join(" ").toLowerCase())); if(!s.includes(Q)) return false; } return true; }
+let html="", lastEra=null, lastYear=null;
+EV.forEach(e=>{
+  if(e.era!==lastEra){ lastEra=e.era; lastYear=null; html+=`<div class="erahead" id="era-${e.era.id}" data-era="${e.era.id}"><div class="span">${esc(e.era.span)} · ${esc(e.era.ch)}</div><h2>${esc(e.era.name)}</h2><p>${esc(e.era.text)}</p><p class="why">${esc(e.era.why)}</p></div>`; }
+  if(e.y!==lastYear){ lastYear=e.y; html+=`<div class="yearrow" data-y="${e.y}">${e.y}</div>`; }
+  const pc=String(e.p).split(/[,;]/)[0];
+  html+=`<article class="ev" id="ev${e.i}" data-i="${e.i}" style="--k:var(--${e.k})"><button type="button" class="lk" data-link="${e.i}" title="Copy a link to this event">link</button><div class="d">${esc(fmtDate(e))}<span class="kt">${esc(KIND[e.k])}</span></div><h4>${esc(e.t_)}</h4><p>${esc(e.x)}</p>`+
+   (e.q?`<blockquote>“${esc(e.q)}” <span class="c">p. ${esc(e.qp||e.p)}</span></blockquote>`:"")+
+   (e.note?`<div class="flag">${esc(e.note)}</div>`:"")+
+   `<div class="meta">${e.pl.map(p=>`<button type="button" data-place="${esc(p)}">${esc(p)}</button>`).join("")}${e.pp.length?" · "+esc(e.pp.join(", ")):""} · <b>Ch. ${chap(pc)}, p. ${esc(e.p)}</b>${e.src?`<span class="src">Record cited: ${esc(e.src)}</span>`:""}</div></article>`;
+});
+EV.forEach(e=>{}); list.innerHTML=html;
+list.addEventListener("click",ev=>{ const L=ev.target.closest("button[data-link]"); if(L){ ev.stopPropagation(); const u=location.href.split("#")[0]+"#ev"+L.dataset.link; try{ navigator.clipboard.writeText(u).then(()=>{L.textContent="copied"; setTimeout(()=>L.textContent="link",1200);},()=>{}); }catch(x){} try{ history.replaceState(null,"","#ev"+L.dataset.link); }catch(x){} return; } const b=ev.target.closest("button[data-place]"); if(b){ setPlace(b.dataset.place); return; } const a=ev.target.closest(".ev"); if(a){ select(EV[+a.dataset.i],false); } });
+function applyFilter(){ let n=0; const yrs={}, eras={};
+  EV.forEach(e=>{ const v=visible(e); const a=document.getElementById("ev"+e.i); a.style.display=v?"":"none"; if(v){n++; yrs[e.y]=1; eras[e.era.id]=1;} });
+  list.querySelectorAll(".yearrow").forEach(r=>{ r.style.display=yrs[r.dataset.y]?"":"none"; });
+  list.querySelectorAll(".erahead").forEach(r=>{ r.style.display=eras[r.dataset.era]?"":"none"; });
+  $("#count").textContent=n===EV.length?`${n} events`:`${n} of ${EV.length} events shown`;
+  const pb=$("#placebar"); if(PLACE){ const P=PL[PLACE]||{}; pb.classList.add("show"); pb.innerHTML=`<button type="button" id="clrplace">Show all</button>Only events at <b>${esc(PLACE)}</b>${P.mod?" ("+esc(P.mod)+")":""}${P.c>=3?" · location uncertain":""}${P.n?"<br>"+esc(P.n):""}`; $("#clrplace").onclick=()=>setPlace(null); } else pb.classList.remove("show");
+  draw();
+}
+function setPlace(p){ PLACE=p; applyFilter(); const first=EV.find(visible); if(first){ suppress(); document.getElementById("ev"+first.i).scrollIntoView({behavior:"smooth",block:"start"}); select(first,false); } }
+function select(e,scroll){ if(SEL){ const o=document.getElementById("ev"+SEL.i); if(o) o.classList.remove("on"); } SEL=e; const a=document.getElementById("ev"+e.i); a.classList.add("on"); T=e.t; $("#slider").value=Math.max(1671,Math.min(1759,T)); if(scroll){ suppress(); a.scrollIntoView({behavior:"smooth",block:"center"}); } draw(); }
+// scroll sync
+let sup=0; function suppress(){ sup=Date.now()+900; }
+let ticking=false;
+function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(()=>{ ticking=false; if(Date.now()<sup) return;
+  const lr=list.getBoundingClientRect(); if(lr.top>window.innerHeight*0.6||lr.bottom<0) return;
+  const mob=window.innerWidth<=900; const line=mob?($(".mapcol").getBoundingClientRect().bottom+24):window.innerHeight*0.32;
+  let best=null; for(const a of list.querySelectorAll(".ev")){ if(a.style.display==="none") continue; const r=a.getBoundingClientRect(); if(r.bottom<line) continue; best=a; break; }
+  if(best){ const e=EV[+best.dataset.i]; if(e!==SEL) select(e,false); }
+}); }
+window.addEventListener("scroll",onScroll,{passive:true});
+// slider and play
+$("#slider").addEventListener("input",ev=>{ T=+ev.target.value; const e=EV.find(x=>x.t>=T-1e-6&&visible(x))||EV[EV.length-1]; if(SEL){ const o=document.getElementById("ev"+SEL.i); if(o) o.classList.remove("on"); } SEL=e; document.getElementById("ev"+e.i).classList.add("on"); suppress(); document.getElementById("ev"+e.i).scrollIntoView({block:"start"}); draw(); });
+let timer=null;
+$("#play").addEventListener("click",()=>{ if(timer){ clearInterval(timer); timer=null; $("#play").innerHTML="&#9654;"; return; } $("#play").innerHTML="&#10074;&#10074;"; const step=()=>{ const vis=EV.filter(visible); let i=SEL?vis.indexOf(SEL):-1; const nx=vis[i+1]; if(!nx||nx.t>1759){ clearInterval(timer); timer=null; $("#play").innerHTML="&#9654;"; return; } select(nx,true); }; step(); timer=setInterval(step,1600); });
+// zoom and pan
+function zoomAt(f,cx,cy){ const nw=Math.max(220,Math.min(VB0[2]*1.15,vb[2]*f)); const nh=nw*VB0[3]/VB0[2]; if(cx==null){cx=vb[0]+vb[2]/2; cy=vb[1]+vb[3]/2;} const rx=(cx-vb[0])/vb[2], ry=(cy-vb[1])/vb[3]; vb=[cx-rx*nw,cy-ry*nh,nw,nh]; setVB(); }
+$("#zin").onclick=()=>zoomAt(0.65); $("#zout").onclick=()=>zoomAt(1/0.65); $("#zreset").onclick=()=>{ vb=VB0.slice(); setVB(); };
+function svgPt(cx,cy){ const pt=svg.createSVGPoint(); pt.x=cx; pt.y=cy; return pt.matrixTransform(svg.getScreenCTM().inverse()); }
+svg.addEventListener("wheel",ev=>{ if(!ev.ctrlKey&&!ev.metaKey&&Math.abs(ev.deltaY)<40&&!ev.deltaMode) {} ev.preventDefault(); const p=svgPt(ev.clientX,ev.clientY); zoomAt(ev.deltaY>0?1.18:1/1.18,p.x,p.y); },{passive:false});
+let drag=null; const pts=new Map();
+svg.addEventListener("pointerdown",ev=>{ pts.set(ev.pointerId,{x:ev.clientX,y:ev.clientY}); if(pts.size===1){ drag={x:ev.clientX,y:ev.clientY,vb:vb.slice(),moved:false}; } else if(pts.size===2){ const [a,b]=[...pts.values()]; drag={pinch:Math.hypot(a.x-b.x,a.y-b.y),vb:vb.slice(),mid:svgPt((a.x+b.x)/2,(a.y+b.y)/2)}; } });
+svg.addEventListener("pointermove",ev=>{ if(!pts.has(ev.pointerId)||!drag) return; pts.set(ev.pointerId,{x:ev.clientX,y:ev.clientY});
+  if(drag.pinch&&pts.size===2){ const [a,b]=[...pts.values()]; const d=Math.hypot(a.x-b.x,a.y-b.y); vb=drag.vb.slice(); zoomAt(drag.pinch/d,drag.mid.x,drag.mid.y); return; }
+  if(drag.pinch) return; const k=1/pxPerUnit(); const dx=(ev.clientX-drag.x)*k, dy=(ev.clientY-drag.y)*k; if(Math.abs(dx)+Math.abs(dy)>3*k){ drag.moved=true; svg.classList.add("drag"); if(!svg.hasPointerCapture(ev.pointerId)) svg.setPointerCapture(ev.pointerId); } if(drag.moved){ vb=[drag.vb[0]-dx,drag.vb[1]-dy,vb[2],vb[3]]; svg.setAttribute("viewBox",vb.join(" ")); } });
+function endPtr(ev){ pts.delete(ev.pointerId); if(pts.size===0){ if(drag&&drag.moved) setVB(); drag=null; svg.classList.remove("drag"); } }
+svg.addEventListener("pointerup",endPtr); svg.addEventListener("pointercancel",endPtr);
+let lastMob=window.innerWidth<=900; window.addEventListener("resize",()=>{ const m=window.innerWidth<=900; if(m!==lastMob){ lastMob=m; VB0=fitVB(); vb=VB0.slice(); setVB(); } else scaleText(); });
+// ---------- Colachel inset
+(function(){ const box=$("#inset"); { const a=proj(8.37,77.13), b=proj(8.045,77.60); const w=b[0]-a[0], h=w*3/4, cy=(a[1]+b[1])/2; box.setAttribute("viewBox",[a[0],cy-h/2,w,h].map(v=>v.toFixed(1)).join(" ")); } const gl=$("#iLines"), gr=$("#iRoutes"), gp=$("#iPlaces"); const k=300/ (box.getBoundingClientRect().width||400);
+  const S=0.75; // inset units per px approx
+  LINES.filter(L=>L.id==="aramboli").forEach(L=>{ const p=el("path",{d:pathOf(L.pts),class:"line"},gl); p.style.strokeWidth="1.6px"; p.style.strokeDasharray="1.2 1.6"; });
+  ROUTES.filter(R=>["r4","r5"].includes(R.id)).forEach(R=>{ const p=el("path",{d:pathOf(R.pts),class:"route "+R.side,"marker-end":"url(#arr-"+R.side+")"},gr); p.style.strokeWidth="1.3px"; p.style.strokeDasharray="3.5 2"; });
+  const sea=el("path",{d:pathOf([[8.18,77.24],[8.12,77.32],[8.06,77.45],[8.06,77.54]]),fill:"none",stroke:"#e08a1e","marker-end":"url(#arr-dutch)"},gr); sea.style.strokeWidth="1.3px"; sea.style.strokeDasharray="3.5 2"; sea.style.opacity=".9";
+  ["Colachel","Cariapattanam","Iranyal","Kalkulam","Udayagiri","Tiruvattar","Kottar","Nagarcoil","Suchindram","Kanniyakumari","Aramboli","Tovala","Tengapattanam"].forEach(n=>{ const P=PL[n]; if(!P||!P.xy) return; el("circle",{cx:P.xy[0],cy:P.xy[1],r:1.7,class:"pdot","stroke-width":0.6},gp); const west=["Colachel","Tengapattanam","Udayagiri","Cariapattanam","Nagarcoil"].includes(n); const t=el("text",{x:P.xy[0]+(west?-2.6:2.6),y:P.xy[1]+(n==="Kottar"?4.5:n==="Nagarcoil"?-0.5:2),"text-anchor":west?"end":"start",class:"plab"+(n==="Colachel"?" hot":""),"font-size":n==="Colachel"?7.5:6,"stroke-width":1.6},gp); t.textContent=n; });
+  [["Hackert's ships to Tuticorin, May 1741",8.062,77.36],["Aramboli Lines",8.19,77.562],["Prisoners' march, 13 Aug",8.125,77.27],["Relief, Jul and Aug",8.13,77.47]].forEach(([s,la,lo])=>{ const [x,y]=proj(la,lo); const t=el("text",{x,y,class:"plab minor","font-size":5.2,"stroke-width":1.4,"font-style":"italic"},gp); t.textContent=s; });
+})();
+$("#nums").innerHTML=[["400+","landed 19 Feb, 22 killed"],["c. 250","Europeans left in the fort in May"],["20,000","besiegers by June"],["c. 22","deserters directing the siege"],["600 lb","of powder in the church magazine"],["190","marched out on 13 Aug"],["40","sick and wounded carried by vallam"],["11 km","naked march to Cariapattanam"]].map(([a,b])=>`<div><b>${a}</b>${b}</div>`).join("");
+$("#siege").innerHTML=EV.filter(e=>e.t>=1741.1&&e.t<1741.72&&e.pl.some(p=>["Colachel","Kanniyakumari","Aramboli","Cariapattanam","Iranyal","Tuticorin","Tiruvattar","Paterre"].includes(p))).map(e=>`<li style="--k:var(--${e.k})"><div class="d">${esc(fmtDate(e))} <span class="c">p. ${esc(e.p)}</span></div><b>${esc(e.t_)}</b><p>${esc(e.x)}</p></li>`).join("");
+// ---------- people
+const GRP={tvm:"Travancore",rival:"Rival princes and nobles",eur:"Europeans in Travancore service",dutch:"The Dutch Company",mad:"Madurai and the Carnatic",eng:"English and French"};
+const pidx={}; EV.forEach(e=>e.pp.forEach(p=>(pidx[p]=pidx[p]||[]).push(e)));
+$("#groups").innerHTML=Object.entries(GRP).map(([g,lab])=>`<div class="group"><h3>${lab}</h3>${PEOPLE.filter(p=>p[2]===g).map(p=>{ const evs=pidx[p[0]]||[]; const pages=[...new Set(evs.map(e=>String(e.p).split(/[,-]/)[0].trim()))].slice(0,8).join(", "); return `<div class="person"><b>${esc(p[1])}</b> ${evs.length?`<button type="button" data-person="${esc(p[0])}">${evs.length} event${evs.length==1?"":"s"}</button>`:""}<p>${esc(p[3])}${pages?` <span class="c">pp. ${esc(pages)}</span>`:""}</p></div>`; }).join("")}</div>`).join("");
+document.querySelectorAll("button[data-person]").forEach(b=>b.addEventListener("click",()=>{ const n=b.dataset.person; $("#q").value=n.replace(/ \(.*\)/,""); Q=$("#q").value.toLowerCase(); applyFilter(); const f=EV.find(visible); document.getElementById("atlas").scrollIntoView({behavior:"smooth"}); if(f) setTimeout(()=>select(f,true),500); }));
+const GENE=[
+ ["Before 1671",[["Ravi Varma","king 1610 to 1662",1],["1630 adoption from the Jayasimhanad house","Aditiya Varma, his sister Asvati Tirunal and their mother Makayiram Tirunal",0]]],
+ ["1671 to 1704",[["Aditiya Varma","king 1671 to 1677",1],["Asvati Tirunal","rani of Attingal, regent; d. 1697",0],["Ravi Varma","adopted 1672 from the Jayasimhanad house; king 1684 to 1704",1],["Kerala Varma, prince of Kottayam","first Kolathiri adoption, 1681; murdered 1696",0]]],
+ ["1696 to 1729",[["Second Kolathiri adoption, 1696","two princes and their sisters",0],["Aditiya Varma","king 1711 to 1721",1],["Rama Varma","king 1721 to 1729",1],["A princess, m. the Kilimanur prince","the prince killed on the Attingal road in 1728",0],["Third Kolathiri adoption, 1718","for the Attingal line; the prince of Tellicherri adopted in 1722",0]]],
+ ["Her children",[["Prince of Neyyatinkara","d. 1729; father of Pappu Tambi and Rama Tambi (d. 1730) by de Lannoy's reading",0],["Martanda Varma","adopted into Karunagappalli 1715, re-adopted 1721; king 1729 to 1758",1],["Princesses","one rules Karunagappalli; one is mother of the next king",0]]],
+ ["Next generation",[["Rama Varma, the Dharma Raja","king 1758 to 1798",1]]],
+];
+$("#gene").innerHTML=GENE.map(([l,bs])=>`<div class="gen"><div class="lbl">${l}</div>${bs.map(([a,b,k])=>`<div class="gbox${k?" king":""}"><b>${esc(a)}</b><small>${esc(b)}</small></div>`).join("")}</div>`).join("");
+// ---------- terms, compare, slips, gazetteer
+$("#termlist").innerHTML=TERMS.map(([a,b,c])=>`<div class="term"><b>${esc(a)}</b><p>${esc(b)} <span class="c">p. ${esc(c)}</span></p></div>`).join("");
+const TAG={diff:"Differs",add:"Book adds",same:"Agrees"};
+$("#cmp").innerHTML=CMP.map(([t,n,d,p,k])=>`<tr><td>${esc(t)}</td><td>${esc(n)}</td><td>${esc(d)}</td><td class="c">p. ${esc(p)}</td><td><span class="tag ${k}">${TAG[k]}</span></td></tr>`).join("");
+$("#sliplist").innerHTML=SLIPS.map(([a,b])=>`<div class="slip"><b>${esc(a)}</b><p>${esc(b)}</p></div>`).join("");
+$("#gaz").innerHTML=Object.entries(PL).sort((a,b)=>a[0].localeCompare(b[0])).map(([k,p])=>`<div><b>${esc(k)}</b>: ${esc(p.mod)}${p.c>=3?' <span class="u">uncertain</span>':p.c==2?' <span class="c">approximate</span>':""}${p.idx?` <span class="c">book map no. ${p.idx}</span>`:""}${p.n?`<br><span style="color:var(--ink2)">${esc(p.n)}</span>`:""}</div>`).join("")+`<div><b>Not placed</b>: Cambonatty, Chiwandaram, Caddebenath, Cobolon, Hernitte, Adirampose, Managunattu, Mondy, Parunda and Comerottu (ends of the 1750 Tekkumkur lines), Chevery Kotta.</div>`;
+// theme
+(function(){ const root=document.documentElement; let saved=null; try{ saved=localStorage.getItem("atlas-theme"); }catch(e){}
+  if(saved) root.setAttribute("data-theme",saved);
+  $("#themebtn").addEventListener("click",()=>{ const cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"); const nx=cur==="dark"?"light":"dark"; root.setAttribute("data-theme",nx); try{ localStorage.setItem("atlas-theme",nx); }catch(e){} }); })();
+// ---------- event strip
+var stripCur=null; const G0=1700, G1=1760;
+(function(){ const st=$("#strip"); const by={}; EV.forEach(e=>{ if(e.y<1671||e.y>1758) return; (by[e.y]=by[e.y]||[]).push(e.k); }); const order=["war","treaty","court","europe","lannoy"]; const mx=Math.max(...Object.values(by).map(a=>a.length));
+  for(const y in by){ let h0=30; const ks=by[y].sort((a,b)=>order.indexOf(a)-order.indexOf(b)); ks.forEach(k=>{ const h=26/mx; h0-=h; el("rect",{x:+y+0.08,y:h0,width:0.84,height:h,fill:`var(--${k})`},st); }); }
+  stripCur=el("rect",{x:1671,y:0,width:0.5,height:30,fill:"var(--ink)",opacity:".55"},st);
+  st.addEventListener("click",ev=>{ const r=st.getBoundingClientRect(); const v=1671+(ev.clientX-r.left)/r.width*88; const sl=$("#slider"); sl.value=v; sl.dispatchEvent(new Event("input")); });
+})();
+// ---------- growth chart
+(function(){ const order=["cochin","karappuram","vadakkumkur","tekkumkur","purakkad","pandalam","kayamkulam","karunagappalli","nedumangadu","desinganadu","attingal","venad","nanjanad"]; const gw=$("#gw"); let h=`<div></div><div class="axis">`; for(let y=G0;y<=G1;y+=10) h+=`<span style="left:${(y-G0)/(G1-G0)*100}%">${y}</span>`; [[1730,"pillamar broken"],[1741.6,"Colachel"],[1747.8,"Quilon falls"],[1753.6,"Mavelikara"]].forEach(([y,t])=>{ h+=`<i style="left:${(y-G0)/(G1-G0)*100}%">${t}</i>`; }); h+=`</div>`;
+  order.forEach(k=>{ const seq=RS[k].seq; let bars=""; for(let i=0;i<seq.length;i++){ const a=Math.max(G0,seq[i][0]), b=Math.min(G1,i+1<seq.length?seq[i+1][0]:G1); if(b<=a) continue; bars+=`<rect x="${a}" y="2" width="${b-a}" height="18" fill="var(--${seq[i][1]})" fill-opacity="${seq[i][1]==="own"?.85:.6}" data-i="${i}"/>`; } h+=`<div class="nm" title="${esc(RS[k].name)}">${esc(RS[k].name)}</div><div class="row" data-r="${k}"><svg viewBox="${G0} 0 ${G1-G0} 22" preserveAspectRatio="none">${bars}</svg><div class="gcur"></div></div>`; });
+  gw.innerHTML=h;
+  const yrAt=(row,ev)=>{ const r=row.getBoundingClientRect(); return G0+(ev.clientX-r.left)/r.width*(G1-G0); };
+  gw.querySelectorAll(".row").forEach(row=>{ const k=row.dataset.r; row.addEventListener("mousemove",ev=>{ const y=yrAt(row,ev); const s=statusAt(k,y); $("#gtip").innerHTML=`<b>${esc(RS[k].name)}, ${Math.floor(y)}</b>: ${esc(STAT[s[1]])}. ${esc(s[2])}`; });
+    row.addEventListener("click",ev=>{ const y=yrAt(row,ev); const sl=$("#slider"); sl.value=y; sl.dispatchEvent(new Event("input")); document.getElementById("atlas").scrollIntoView(); }); });
+})();
+// keyboard stepping
+document.addEventListener("keydown",ev=>{ if(ev.target.closest&&ev.target.closest("input,textarea,select")) return; if(ev.key!=="ArrowRight"&&ev.key!=="ArrowLeft") return; const ar=document.getElementById("atlas").getBoundingClientRect(); if(ar.top>innerHeight*0.5||ar.bottom<0) return; const vis=EV.filter(visible); const i=SEL?vis.indexOf(SEL):-1; const nx=vis[i+(ev.key==="ArrowRight"?1:-1)]; if(nx){ ev.preventDefault(); select(nx,true); } });
+// init
+applyFilter(); setVB();
+{ const m=/^#ev(\d+)$/.exec(location.hash); const e=m&&EV[+m[1]]; if(e){ select(e,false); setTimeout(()=>{ document.getElementById("atlas").scrollIntoView(); select(e,true); },300); } else select(EV[0],false); }
+})();
+</script>
